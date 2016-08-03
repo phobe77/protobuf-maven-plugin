@@ -60,4 +60,9 @@ public final class ProtocCompileCppMojo extends AbstractProtocCompileMojo {
     protected File getOutputDirectory() {
         return outputDirectory;
     }
+
+    @Override
+    protected MojoType getMojoType() {
+      return MojoType.CPP;
+    }
 }

@@ -21,6 +21,7 @@ import org.apache.maven.plugins.annotations.LifecyclePhase;
 import org.apache.maven.plugins.annotations.Mojo;
 import org.apache.maven.plugins.annotations.Parameter;
 import org.apache.maven.plugins.annotations.ResolutionScope;
+import org.xolstice.maven.plugin.protobuf.AbstractProtocMojo.MojoType;
 
 import java.io.File;
 
@@ -65,5 +66,10 @@ public final class ProtocTestCompileMojo extends AbstractProtocTestCompileMojo {
     @Override
     protected File getOutputDirectory() {
         return outputDirectory;
+    }
+    
+    @Override
+    protected MojoType getMojoType() {
+      return MojoType.DEFAULT;
     }
 }
