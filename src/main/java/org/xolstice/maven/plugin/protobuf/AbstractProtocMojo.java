@@ -411,14 +411,14 @@ abstract class AbstractProtocMojo extends AbstractMojo {
           // Check if we are j2objc and create 2nd output folder
           if (getMojoType() == MojoType.J2OBJC) {
             final File j2objcOutputDirectory = ((ProtocCompileJ2ObjcMojo) this).getJ2ObjcOutputDirectory();
-            
+
             FileUtils.mkdir(j2objcOutputDirectory.getAbsolutePath());
-            
+
             if (clearOutputDirectory) {
               cleanDirectory(j2objcOutputDirectory);
             }
           }
-          
+
           // get toolchain from context
           final Toolchain tc = toolchainManager.getToolchainFromBuildContext("protobuf", session); // NOI18N
           if (tc != null) {
